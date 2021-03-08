@@ -18,11 +18,14 @@ function populate()
 
 function resolvepath()
 {
+	file=""
+	realdotconfig=$(realpath $dotconfig)
 	for link in "$@"
 	do
-		if [ $link != $dotconfig ]
+		file=$(realpath $link)
+		if [ $file != $realdotconfig ]
 		then
-			files+=" $(realpath $link)"
+			files+=" $file"
 		fi
 	done
 }
