@@ -1,0 +1,84 @@
+! copy and paste
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+! font size
+xterm*faceName: Hack
+xterm*faceSize: 14
+! xterm*font:     *-fixed-*-*-*-18-*
+
+! "Visiblue" from terminal.sexy
+! special
+!*.foreground:   #666699
+!*.background:   #000000
+!*.cursorColor:  #666699
+!
+!! black
+!*.color0:       #333366
+!*.color8:       #333399
+!
+!! red
+!*.color1:       #6666cc
+!*.color9:       #9999ff
+!
+!! green
+!*.color2:       #0099cc
+!*.color10:      #00ccff
+!
+!! yellow
+!*.color3:       #3366cc
+!*.color11:      #6699ff
+!
+!! blue
+!*.color4:       #006699
+!*.color12:      #0099cc
+!
+!! magenta
+!*.color5:       #0066ff
+!*.color13:      #0099ff
+!
+!! cyan
+!*.color6:       #669999
+!*.color14:      #66cccc
+!
+!! white
+!*.color7:       #99cccc
+!*.color15:      #ccffff
+
+! "isotope.dark" from terminal.sexy
+! special
+*.foreground:   #d0d0d0
+*.background:   #000000
+*.cursorColor:  #d0d0d0
+
+! black
+*.color0:       #000000
+*.color8:       #808080
+
+! red
+*.color1:       #ff0000
+*.color9:       #ff0000
+
+! green
+*.color2:       #33ff00
+*.color10:      #33ff00
+
+! yellow
+*.color3:       #ff0099
+*.color11:      #ff0099
+
+! blue
+*.color4:       #0066ff
+*.color12:      #0066ff
+
+! magenta
+*.color5:       #cc00ff
+*.color13:      #cc00ff
+
+! cyan
+*.color6:       #00ffff
+*.color14:      #00ffff
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #ffffff
