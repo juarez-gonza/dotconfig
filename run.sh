@@ -2,7 +2,24 @@
 
 # all configs will be copied to this folder
 dotconfig="./dotconfig/"
-github="https://github.com/juarez-gonza/dotcondig.git"
+github="https://github.com/juarez-gonza/dotconfig.git"
+
+function creatdotconfig()
+{
+	if [ -d $dotconfig ]
+	then
+		deldotconfig
+	fi
+		mkdir $dotconfig
+}
+
+function deldotconfig()
+{
+	if [ -d $dotconfig ]
+	then
+		rm -rf $dotconfig
+	fi
+}
 
 function callgather()
 {
@@ -23,17 +40,23 @@ function outofdotconfig()
 	popd
 }
 
-function githubstuff()
+function githubenter()
 {
-	git init
+	git clone $github $dotconfig
+}
+
+function githubout()
+{
 	git add .
 	git commit -m "$(date)"
-	git branch -M main
-	git remote add origin "$github"
 	git push -u origin main
 }
 
+creatdotconfig
+githubenter
 callgather
 intodotconfig
-githubstuff
+
+githubout
 outofdotconfig
+deldotconfig

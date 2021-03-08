@@ -33,18 +33,13 @@ function main()
 
 	resolvepath $links
 
-	if [ -d $dotconfig ]
-	then
-		populate $files
-	else
-		mkdir $dotconfig
-		populate $files
-	fi
+	populate $files
 }
 
 if [ -z $1 ]
 then
 	printf "usage: $0 <dotconfig-folder-name>\n"
+	printf "remember this script expects dotconfig to be already created\n"
 	exit 1
 fi
 
