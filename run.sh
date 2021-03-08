@@ -59,4 +59,4 @@ intodotconfig
 
 githubout
 outofdotconfig
-deldotconfig
+##  deldotconfig
