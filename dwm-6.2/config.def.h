@@ -2,17 +2,11 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 8;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-
-static const int usealtbar          = 0;        /* 1 means use non-dwm status bar */
-static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
-static const char *altbarcmd        = "$HOME/bar.sh"; /* Alternate bar launch command */
-
 static const char *fonts[]          = { "Hack Nerd Font:size=12" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
 
@@ -24,37 +18,27 @@ static const char dmenufont[]       = "Hack Nerd Font:size=12";
 // background color
 // 0. #222222
 // 1. #380E7F
-// 2. #0E0220
-// 3. #1B1919
-static const char col_gray1[]       = "#1b1919";
+static const char col_gray1[]       = "#0E0220";
 
 // inactive windows border color
 // 0. #444444
 // 1. #380E7F
-// 2. #48E0E4
-// 3. #616F39
-static const char col_gray2[]       = "#616f39";
+static const char col_gray2[]       = "#48E0E4";
 
 // font color
 // 0. #bbbbbb
 // 1. #E497CD
-// 2. #D7FBF6
-// 3. #F8EEB4
-static const char col_gray3[]       = "#f8eeb4";
+static const char col_gray3[]       = "#D7FBF6";
 
 // current tag and current window font color
 // 0. #eeeeee
 // 1. #D62196
-// 2. #48E0E4
-// 3. #A7D129
-static const char col_gray4[]       = "#a7d129";
+static const char col_gray4[]       = "#48E0E4";
 
 // Top bar second color and active windows border color
 // 0. #005577
 // 1. #6915CF
-// 2. #E40475
-// 3. #616F39
-static const char col_cyan[]        = "#616f39";
+static const char col_cyan[]        = "#E40475";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */

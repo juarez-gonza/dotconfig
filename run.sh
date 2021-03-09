@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # all configs will be copied to this folder
 dotconfig="./dotconfig/"
@@ -59,4 +59,4 @@ intodotconfig
 
 githubout
 outofdotconfig
-##  deldotconfig
+deldotconfig
