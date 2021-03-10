@@ -25,7 +25,7 @@ function callgather()
 {
 	printf "Resolving links and copying files...\n"
 
-	. ./gather.sh $dotconfig
+	./gather.sh $dotconfig
 
 	printf "Going inside dotconfig folder"
 }
