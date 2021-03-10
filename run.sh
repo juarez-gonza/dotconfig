@@ -54,7 +54,9 @@ function githubout()
 
 creatdotconfig
 githubenter
+printf "about to call gather"
 callgather
+printf "out of gather"
 intodotconfig
 
 githubout
