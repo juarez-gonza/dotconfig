@@ -23,7 +23,7 @@ function runwal()
 # the original config.def.h is kept so don't worry
 function adapt2dwm()
 {
-	./${waldir}/adapt2dwm.py
+	${waldir}/adapt2dwm.py
 }
 
 # depends on: dwm installed locally on ${HOME}/.local/bin
@@ -33,6 +33,7 @@ function adapt2dwm()
 function compiledwm()
 {
 	pushd ${dwmdir}
+	cp config.def.h config.h
 	make clean install
 	popd
 }
