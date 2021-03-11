@@ -17,7 +17,7 @@ static const char *fonts[]          = { "Hack Nerd Font:size=12" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
 
 #include "/home/gonzalo/.cache/wal/colors-wal-dwm.h"
-/* This file has been modified by pywal adapting script at '/usr/home/gonzalo/.config/wal./adapt-to-dwm.py'.The original (unmodified) file is at /home/gonzalo/.config/dwm-6.2/config.def.h.walunmod */
+/* This file has been modified by pywal adapting script at '/home/gonzalo/.config/wal/home/gonzalo/.config/wal/./adapt2dwm.py'.The original (unmodified) file is at /home/gonzalo/.config/dwm-6.2/config.def.h.walunmod */
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 

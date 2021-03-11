@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 links=()
 files=()
@@ -12,7 +12,6 @@ function populate()
 	# arguments have special characters
 	for file in "$@"
 	do
-		echo "copying $file"
 		cp -R $file $dotconfig
 	done
 }

@@ -8,8 +8,8 @@ PREFIX = ${HOME}/.local
 #PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/local/include
-X11LIB = /usr/local/lib
+X11INC = /usr/include
+X11LIB = /usr/lib
 
 # includes and libs
 INCS = -I. -I/usr/include -I${X11INC}
