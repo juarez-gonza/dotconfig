@@ -2,11 +2,21 @@
 
 imgdir="${HOME}/Wallpapers"
 dwmdir="${HOME}/.config/dwm-6.2"
-waldir="${HOME}/.config/wal" 
+waldir="${HOME}/.config/wal"
+walflags=()
+
+function processargs()
+{
+	if [ ! -z $1 ]
+	then
+		imgdir=$(realpath $1)
+	fi
+	[ ! -z $2 ] && [ $2 == "--iterative" ] && walflags+="--iterative "
+}
 
 function runwal()
 {
-	wal -i ${imgdir}
+	wal ${walflags} -i ${imgdir}
 }
 
 # script to adapt config.def.h to pywal
@@ -39,6 +49,7 @@ function simulatekey()
 	fi
 }
 
+processargs $1 $2
 runwal
 adapt2dwm
 compiledwm
