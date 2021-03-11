@@ -47,16 +47,15 @@ function githubenter()
 
 function githubout()
 {
-	git add .
+	git add --all
+	git status
 	git commit -m "$(date)"
 	git push -u origin main
 }
 
 creatdotconfig
 githubenter
-printf "about to call gather"
 callgather
-printf "out of gather"
 intodotconfig
 
 githubout

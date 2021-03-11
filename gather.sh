@@ -12,6 +12,7 @@ function populate()
 	# arguments have special characters
 	for file in "$@"
 	do
+		echo "copying $file"
 		cp -R $file $dotconfig
 	done
 }
