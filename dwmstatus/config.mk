@@ -4,11 +4,12 @@ VERSION = 1.0
 # Customize below to fit your system
 
 # paths
-PREFIX = /usr
+PREFIX = ${HOME}/.local
+#PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/X11R6/include
-X11LIB = /usr/X11R6/lib
+X11INC = /usr/local/include
+X11LIB = /usr/local/lib
 
 # includes and libs
 INCS = -I. -I/usr/include -I${X11INC}
