@@ -4,7 +4,6 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
@@ -34,15 +33,18 @@ fi
 
 xrandr -s 1280x720
 
-nitrogen --restore &
+# not using nitrogen since theme_loop is down there
+#nitrogen --restore &
 picom &
-#exec qtile
 
+theme_loop &
 while true
 do
-# dwmstatus (dwm status bar in C) and dwm
-dwmstatus 2>&1 >/dev/null &
-dwm 2>&1 >/dev/null
+	# dwmstatus (dwm status bar in C) and dwm
+	dwmstatus 2>&1 >/dev/null &
+	dwm 2>&1 >/dev/null
+	# prevent spamming of dwm status
+	killall dwmstatus
 done
 
 exec dwm
