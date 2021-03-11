@@ -69,6 +69,8 @@ def main():
                 st_delim_idx = srcmap.find(bytes(start_delim, "utf8"))
                 if st_delim_idx == -1:
                     st_delim_f = 0
+                else:
+                    st_delim_f = 1
 
                 tmpmap += srcmap[:st_delim_idx]
                 tmpmap += bytes(repl, "utf8")
@@ -76,6 +78,9 @@ def main():
                 end_delim_idx = srcmap.find(bytes(end_delim, "utf8"))
                 if end_delim_idx == -1:
                     end_delim_f = 0
+                else:
+                    end_delim_f = 1
+
                 if end_delim_f != st_delim_f:
                     raise Exception("Delimiters mismatched in file at " + srcpath)
                 if end_delim_f == 0 and st_delim_f == 0:
@@ -92,10 +97,15 @@ def main():
                     buf = buf.replace(bkey, bval)
                 tmpmap += buf
                 dst.write(tmpmap)
-        shutil.copymode(srcpath, tmppath)
-        shutil.move(srcpath, src_finalpath)
-        shutil.move(tmppath, srcpath)
-        log("Successfully modified config.def.h")
+        if DEBUG == 1:
+            shutil.copymode(srcpath, tmppath)
+            shutil.move(tmppath, debugpath)
+            log("DEBUG - Successful modified config.def.h")
+        else:
+            shutil.copymode(srcpath, tmppath)
+            shutil.move(srcpath, src_finalpath)
+            shutil.move(tmppath, srcpath)
+            log("Successfully modified config.def.h")
     except Exception as err:
         log(str(err))
 

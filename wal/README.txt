@@ -20,3 +20,6 @@ change_theme.sh: runs the already mentioned adapt2dwm and recompiles dwm
 theme_loop.sh: a loop that can be run from .xinitrc appending & to daemonize it.
 	It expects change_theme as a binary
 	so it requires you to place a soft link somewhere in the bin/
+
+~/Wallpapers: this is where the script expects to find wallpapers to choose from.
+	It can be changed by passing another folder to change_theme.sh
