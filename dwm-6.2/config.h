@@ -16,8 +16,25 @@ static const char *altbarcmd        = "$HOME/bar.sh"; /* Alternate bar launch co
 static const char *fonts[]          = { "Hack Nerd Font:size=12" };
 static const char dmenufont[]       = "Hack Nerd Font:size=12";
 
-#include "/home/gonzalo/.cache/wal/colors-wal-dwm.h"
-/* This file has been modified by pywal adapting script at '/home/gonzalo/.config/wal/home/gonzalo/.config/wal/./adapt2dwm.py'.The original (unmodified) file is at /home/gonzalo/.config/dwm-6.2/config.def.h.walunmod */
+/* COLOR BEGIN */
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
+// urgentborder patch
+static const char col_urgborder[]   = "#ff0000";
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	[SchemeUrg]  = { selfgcolor, selbgcolor,  col_urgborder  },
+};
+
+/* Do not remove next line, this way pywal script identifies color definition */
+/* COLOR END */
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -65,7 +82,7 @@ static const char *brdowncmd[] = { "sudo", "xbacklight", "-dec", "10", NULL };
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_fg, "-nf", norm_border, "-sb", sel_border, "-sf", sel_fg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *maintermcmd[]  = { "alacritty", NULL };
 static const char *sectermcmd[] = { "xterm", NULL };
 
@@ -103,6 +120,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
 	{ 0, XF86XK_MonBrightnessUp, spawn, {.v = brupcmd} },
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} },
+	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

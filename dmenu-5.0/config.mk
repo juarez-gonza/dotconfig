@@ -6,8 +6,8 @@ VERSION = 5.0
 PREFIX = ${HOME}/.local
 MANPREFIX = $(PREFIX)/share/man
 
-X11INC = /usr/include
-X11LIB = /usr/lib
+X11INC = /usr/local/include
+X11LIB = /usr/local/lib
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
@@ -15,7 +15,7 @@ XINERAMAFLAGS = -DXINERAMA
 
 # freetype
 FREETYPELIBS = -lfontconfig -lXft
-FREETYPEINC = /usr/include/freetype2
+FREETYPEINC = /usr/local/include/freetype2
 # OpenBSD (uncomment)
 #FREETYPEINC = $(X11INC)/freetype2
 

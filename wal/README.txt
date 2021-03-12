@@ -3,23 +3,19 @@ There are some problems with dwm and changing colors "on the fly" since dwm colo
 
 pywal: generates colors for differnet applications out of a wallpaper and puts theme somewhere in ${HOME}/.cache/wal
 
-xdotool: simulates keystrokes (used in ./change_theme.sh to simulate dwm "close" keybind)
+dwm's xrdb patch: this patch allows a non recompilation method for changing colors "on the fly". Otherwise recompilation
+	is needed and not only that's a bit trickier but also slower. I should know cause that was my first approach
+	to this changing of colors deal.
+
+xdotool: simulates keystrokes. Used in scripts or command line.
 
 pidof: a dependency of pywall used also in a script to check if Xorg is running.
 	It's name if pretty self explanatory.
 
-adapt2dwm.py: script that adapts config.def.h to whatever pywall expects.
-	The original config.def.h is kept under config.def.h.walunmod.
+c2xrsrc.py: script that appends to the created by pywal colors.Xresources, the lines needed for dwm's xrdb patch to work
 
-change_theme.sh: runs the already mentioned adapt2dwm and recompiles dwm
-	DWM NEEDS TO BE INSTALLED LOCALLY (${HOME}/.local/bin/) OTHERWISE THIS
-	WONT BE DONE BECAUSE OF LACK OF PERMISSIONS.
-		This can be done by modifying config.mk prefix to be equal
-		to ${HOME}/.local/bin
+chpalette.sh: runs the already mentioned c2xrsrc and the keystroke simulation to refresh dwm colors
 
-theme_loop.sh: a loop that can be run from .xinitrc appending & to daemonize it.
-	It expects change_theme as a binary
-	so it requires you to place a soft link somewhere in the bin/
-
-~/Wallpapers: this is where the script expects to find wallpapers to choose from.
-	It can be changed by passing another folder to change_theme.sh
+looppalette.sh: a loop that can be run from .xinitrc appending & to daemonize it.
+	It expects chpalette somewhere in the bins like /usr/local/bin or ${HOME}/.local/bin
+	so it requires you to place a link to chpalette.sh
