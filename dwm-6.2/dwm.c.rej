@@ -1,0 +1,34 @@
+@@ -591,7 +593,7 @@
+ 				for (c = m->clients; c; c = c->next)
+ 					if (c->isfullscreen)
+ 						resizeclient(c, m->mx, m->my, m->mw, m->mh);
+-				XMoveResizeWindow(dpy, m->barwin, m->wx, m->by, m->ww, bh);
++				XMoveResizeWindow(dpy, m->barwin, m->wx + sp, m->by + vp, m->ww -  2 * sp, bh);
+ 			}
+ 			focus(NULL);
+ 			arrange(NULL);
+@@ -1725,7 +1731,7 @@
+ {
+ 	selmon->showbar = !selmon->showbar;
+ 	updatebarpos(selmon);
+-	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx, selmon->by, selmon->ww, bh);
++	XMoveResizeWindow(dpy, selmon->barwin, selmon->wx + sp, selmon->by + vp, selmon->ww - 2 * sp, bh);
+ 	arrange(selmon);
+ }
+ 
+@@ -1929,11 +1935,11 @@
+ 	m->wy = m->my;
+ 	m->wh = m->mh;
+ 	if (m->showbar) {
+-		m->wh -= bh;
+-		m->by = m->topbar ? m->wy : m->wy + m->wh;
+-		m->wy = m->topbar ? m->wy + bh : m->wy;
++		m->wh = m->wh - vertpad - bh;
++		m->by = m->topbar ? m->wy : m->wy + m->wh + vertpad;
++		m->wy = m->topbar ? m->wy + bh + vp : m->wy;
+ 	} else
+-		m->by = -bh;
++		m->by = -bh - vp;
+ }
+ 
+ void
