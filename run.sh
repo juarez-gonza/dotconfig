@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # all configs will be copied to this folder
 dotconfig="./dotconfig/"
@@ -25,7 +25,7 @@ function callgather()
 {
 	printf "Resolving links and copying files...\n"
 
-	./gather.sh $dotconfig
+	. ./gather.sh $dotconfig
 
 	printf "Going inside dotconfig folder"
 }
@@ -47,8 +47,7 @@ function githubenter()
 
 function githubout()
 {
-	git add --all
-	git status
+	git add .
 	git commit -m "$(date)"
 	git push -u origin main
 }
@@ -60,4 +59,4 @@ intodotconfig
 
 githubout
 outofdotconfig
-##  deldotconfig
+deldotconfig

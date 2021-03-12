@@ -22,13 +22,13 @@ c2xrsrc = \
 # color assigned to C variable in its definition at Cfile
 cdefcolor = \
         {
-                "norm_fg": "",
-                "norm_bg": "",
-                "norm_border": "",
+                "norm_fg": None,
+                "norm_bg": None,
+                "norm_border": None,
 
-                "sel_fg": "",
-                "sel_bg": "",
-                "sel_border": "",
+                "sel_fg": None,
+                "sel_bg": None,
+                "sel_border": None,
         }
 
 # regex used in next function
@@ -40,7 +40,7 @@ def extract_hex_color(string):
     match = expr.match(string)
     if match is not None:
         return match.group(2) # extract hex, group 2 in expr
-    return ""
+    return None
 
 # note how this expects one assignment per line
 # meaning, several assignments separated by comas or statements on the same line
@@ -52,9 +52,9 @@ def main():
 
             for line in cf:
                 for key in cdefcolor.keys():
-                    if key in line and cdefcolor[key] == "":
+                    if key in line and cdefcolor[key] is None:
                         cdefcolor[key] = extract_hex_color(line)
-                        if cdefcolor[key] == "":
+                        if cdefcolor[key] is None:
                             raise Exception("Error extracting hex color")
 
             for key in cdefcolor.keys():

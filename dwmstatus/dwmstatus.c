@@ -321,10 +321,8 @@ main(void)
 	}
 
 	for (;;sleep(60)) {
-		/*
 		bat = getbattery("/sys/class/power_supply/BAT0");
 		brt = getbacklight("/sys/class/backlight/intel_backlight");
-		*/
 		tmar = mktimes("%H:%M", tzargentina);
 		/*
 		avgs = loadavg();
@@ -336,10 +334,12 @@ main(void)
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
 		*/
 
-		status = smprintf("  %s  ", tmar);
+		status = smprintf("  %s  |  %s  |  %s  ", bat, brt, tmar);
 		setstatus(status);
 
 		free(tmar);
+		free(brt);
+		free(bat);
 		/*
 		free(avgs);
 		free(t0);
@@ -348,8 +348,6 @@ main(void)
 		free(bat1);
 		free(tmutc);
 		free(tmbln);
-		free(brt);
-		free(bat);
 		*/
 		free(status);
 	}
