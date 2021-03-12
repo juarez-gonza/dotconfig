@@ -8,6 +8,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
+static const char dmenuvertpad[]    = "0";       /* vertical padding of bar */
+static const char dmenusidepad[]    = "0";       /* horizontal padding of bar */
 
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -85,7 +87,7 @@ static const char *brdowncmd[] = { "sudo", "xbacklight", "-dec", "10", NULL };
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, "-x", dmenusidepad, "-y", dmenuvertpad, NULL };
 static const char *maintermcmd[]  = { "alacritty", NULL };
 static const char *sectermcmd[] = { "xterm", NULL };
 
