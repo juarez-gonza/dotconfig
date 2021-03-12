@@ -33,17 +33,17 @@ fi
 
 xrandr -s 1280x720
 
-# not using nitrogen since theme_loop is down there
-nitrogen --restore &
+# not using nitrogen since dwm/xrdb/pywal looppalette is down there
+# nitrogen --restore &
 picom &
 
-#theme_loop &
+looppalette &
 while true
 do
 	# dwmstatus (dwm status bar in C) and dwm
 	dwmstatus 2>&1 >/dev/null &
 	dwm 2>&1 >/dev/null
-	# prevent spamming of dwm status
+	# prevent spamming of dwm status (there is a patch for dwm for dealing with this but meh)
 	killall dwmstatus
 done
 

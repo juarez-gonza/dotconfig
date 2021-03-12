@@ -3,7 +3,9 @@
 imgdir="${HOME}/Wallpapers"
 dwmdir="${HOME}/.config/dwm-6.2"
 waldir="${HOME}/.config/wal"
-xrsrc="${HOME}/.cache/wal/colors.Xresources"
+walxrsrc="${HOME}/.cache/wal/colors.Xresources"
+xrsrc="${HOME}/.Xresources"
+
 walflags=()
 
 function processargs()
@@ -20,7 +22,7 @@ function runwal()
 	wal ${walflags} -i ${imgdir}
 }
 
-# appends to xrsrc the lines dwm with xrdb patch expects
+# appends to walxrsrc the lines dwm with xrdb patch expects
 function c2xrsrc()
 {
 	${waldir}/c2xrsrc.py
@@ -31,6 +33,7 @@ function c2xrsrc()
 function loadxrdb()
 {
 	xrdb -load ${xrsrc}
+	xrdb -merge ${walxrsrc}
 }
 
 # simulates key press to apply xrsrc colors
