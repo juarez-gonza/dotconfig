@@ -247,10 +247,11 @@ failc2ptrs:
 static unsigned char *pathcat(unsigned char *dst, unsigned char *src)
 {
 	if (strlen(dst) != 0) {
-		dst[strlen(dst) + SEPLEN] = '\0';
 		strncat(dst, SEP, SEPLEN);
+		dst[strlen(dst)] = '\0';
 	}
 	strncat(dst, src, strlen(src));
+	dst[strlen(dst)] = '\0';
 	return dst;
 }
 
