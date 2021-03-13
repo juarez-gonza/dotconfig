@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <string.h>
 
+/* go to main() at the end of the file to understand how this works :) */
+
 #define HOME "HOME"
 #define WAL ".cache/wal"
 #define CFILE "colors-wal-dwm.h"
