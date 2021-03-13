@@ -1,0 +1,6 @@
+Patches installed:
+	- xrdb (work really well with pywal)
+	- urgentborder (a few patches seemed to take this one for granted)
+	- anybar
+	- barpadding
+	- fullgaps
