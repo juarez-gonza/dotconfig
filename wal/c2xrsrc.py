@@ -60,4 +60,5 @@ def main():
             for key in cdefcolor.keys():
                 buf = c2xrsrc[key] + ": " + cdefcolor[key] + "\n"
                 xf.write(buf)
+
 main()

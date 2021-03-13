@@ -13,6 +13,9 @@ pidof: a dependency of pywall used also in a script to check if Xorg is running.
 	It's name if pretty self explanatory.
 
 c2xrsrc.py: script that appends to the created by pywal colors.Xresources, the lines needed for dwm's xrdb patch to work
+c2xrsrc.c: does the same than c2xrsrc.py but a LOT (10 times in my machine) faster.
+	For alternating between these 2 just change the c2xrsrc function in chpalette.sh
+	(remember c2xrsrc.c should be compiled and the output of that is what should be loaded)
 
 chpalette.sh: runs the already mentioned c2xrsrc and the keystroke simulation to refresh dwm colors
 

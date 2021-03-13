@@ -57,6 +57,6 @@ githubenter
 callgather
 intodotconfig
 
-githubout
-outofdotconfig
-deldotconfig
+# githubout
+# outofdotconfig
+# deldotconfig

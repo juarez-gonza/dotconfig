@@ -25,7 +25,7 @@ function runwal()
 # appends to walxrsrc the lines dwm with xrdb patch expects
 function c2xrsrc()
 {
-	${waldir}/c2xrsrc.py
+	${waldir}/a.out
 }
 
 # depends on:
