@@ -82,10 +82,15 @@ void cleanup(int retcode)
 	exit(retcode);
 }
 
+/*
+ * appends to XRSRC the lines expected by dwm xrdb
+ */
 static void xfile_append(void)
 {
 	FILE* xhandle;
+	unsigned int wb;
 	int i;
+
 	xhandle = fopen(xpath, "a");
 	if (xhandle == NULL)
 		goto failxopen;
@@ -98,7 +103,9 @@ static void xfile_append(void)
 		strncpy(filebuf + strlen(filebuf), c2ptrs[i]->hexcolor, FILEBUFSIZE - strlen(filebuf) - 2);
 		filebuf[strlen(filebuf)] = '\n';
 
-		fwrite(filebuf, sizeof(unsigned char), strlen(filebuf), xhandle);
+		wb = fwrite(filebuf, sizeof(unsigned char), strlen(filebuf), xhandle);
+		if (wb != strlen(filebuf))
+			goto failxappend;
 	}
 	return;
 failxappend:
@@ -241,7 +248,7 @@ static unsigned char *pathcat(unsigned char *dst, unsigned char *src)
 {
 	if (strlen(dst) != 0) {
 		dst[strlen(dst) + SEPLEN] = '\0';
-		dst[strlen(dst)] = '/';
+		strncat(dst, SEP, SEPLEN);
 	}
 	strncat(dst, src, strlen(src));
 	return dst;
@@ -265,7 +272,7 @@ static int pathalloc(unsigned char **dst, unsigned char *src)
 	if (*dst != NULL) {
 		dstlen = strlen(*dst);
 		size += dstlen;
-		size++; /* another byte allocated for '/' */
+		size += SEPLEN; /* byte/s allocated for SEP */
 	}
 
 	*dst = realloc(*dst, size); /* if *dst == NULL then it's just like malloc */
