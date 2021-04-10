@@ -2,7 +2,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 
@@ -48,7 +48,9 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	/*
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	*/
 };
 
 /* layout(s) */
@@ -72,9 +74,16 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* volume key bindings */
+/* with pulseaudio */
+/*
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
+*/
+/* with alsa and alsa-utils */
+static const char *mutecmd[] = { "amixer", "set", "Master", "toggle", NULL };
+static const char *volupcmd[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *voldowncmd[] = { "amixer", "set", "Master", "5%-", NULL };
 
 /* screen xbacklight key bindings */
 static const char *brupcmd[] = { "sudo", "xbacklight", "-inc", "10", NULL };
@@ -86,8 +95,8 @@ static const char *brdowncmd[] = { "sudo", "xbacklight", "-dec", "10", NULL };
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", normfgcolor, "-x", dmenusidepad, "-y", dmenuvertpad, NULL };
-static const char *maintermcmd[]  = { "alacritty", NULL };
-static const char *sectermcmd[] = { "xterm", NULL };
+static const char *maintermcmd[]  = { "urxvt", NULL };
+static const char *sectermcmd[] = { "urxvt", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

@@ -1,0 +1,64 @@
+# secure
+set ssl_force_tls = yes
+source "gpg -d ~/.config/mutt/sensitive.gpg |" # sensitive.gpg has my_pass defined
+
+set my_user = "gmjuareztello@gmail.com"
+
+# mail header info
+set from = $my_user
+set use_from = yes
+set realname = "Gonzalo Matias Juarez Tello"
+
+# IMAP user
+set imap_user = $my_user
+set imap_pass = $my_pass
+
+set folder = "imaps://imap.gmail.com/" # port 993
+set spoolfile = "+INBOX"
+set mbox = "+[Gmail]/Todos"
+set record = "+[Gmail]/Enviados"
+set trash = "+[Gmail]/Papelera"
+set mail_check = 10
+
+## SMTP
+set smtp_url = "smtp://gmjuareztello@smtp.gmail.com:587"
+set smtp_pass = $my_pass
+set smtp_authenticators = 'login'
+
+# index
+set sort = threads
+set sort_aux = reverse-date
+set date_format = "%d/%m - %I:%M"
+set index_format = "%C %Z %d %-15.15F %s (%c)"
+
+# sidebar
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+mailboxes +INBOX +[Gmail]/Todos +[Gmail]/Enviados +[Gmail]/Papelera
+
+# MISC
+#	editing
+set editor = "nvim"
+set charset = "utf-8"
+set header_cache = "~/.cache/mutt"
+#set message_cachedir = "~/.cache/mutt"
+
+#	sidebar macros
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+
+#	imap macros for mail fs
+bind index g noop
+macro index ga "<change-folder>$mbox<enter>" "go to all"
+macro index gs "<change-folder>$record<enter>" "go to sent"
+macro index gi "<change-folder>$spoolfile<Enter>" "go to inbox"
+macro index gt "<change-folder>$trash<enter>" "go to trash"
+
+#	vim-like keybindings
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
+bind index G last-entry
+#bind index g noop	# already written for imap macros
+bind index gg first-entry

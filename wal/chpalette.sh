@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 imgdir="${HOME}/Wallpapers"
 dwmdir="${HOME}/.config/dwm-6.2"

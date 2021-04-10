@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+C2SIZE	c2xrsrc.c	/^#define C2SIZE /;"	d	file:
+CFILE	c2xrsrc.c	/^#define CFILE /;"	d	file:
+CFVARLEN	c2xrsrc.c	/^#define CFVARLEN /;"	d	file:
+Cfile	c2xrsrc.py	/^Cfile = os.path.join(walcache, "colors-wal-dwm.h")$/;"	v
+FILEBUFSIZE	c2xrsrc.c	/^#define FILEBUFSIZE /;"	d	file:
+HEXCOLLEN	c2xrsrc.c	/^#define HEXCOLLEN /;"	d	file:
+HOME	c2xrsrc.c	/^#define HOME /;"	d	file:
+NUMOFATTR	c2xrsrc.c	/^#define NUMOFATTR /;"	d	file:
+SEP	c2xrsrc.c	/^#define SEP /;"	d	file:
+SEPLEN	c2xrsrc.c	/^#define SEPLEN /;"	d	file:
+WAL	c2xrsrc.c	/^#define WAL /;"	d	file:
+XATTRLEN	c2xrsrc.c	/^#define XATTRLEN /;"	d	file:
+XRSRC	c2xrsrc.c	/^#define XRSRC /;"	d	file:
+Xrsrcfile	c2xrsrc.py	/^Xrsrcfile = os.path.join(walcache, "colors.Xresources")$/;"	v
+arrlen	c2xrsrc.c	/^#define arrlen(/;"	d	file:
+buildpath	c2xrsrc.c	/^static unsigned char* buildpath(unsigned char *prefix, unsigned char *suffix)$/;"	f	typeref:typename:unsigned char *	file:
+c2ptrs	c2xrsrc.c	/^struct c2xrsrc *c2ptrs[NUMOFATTR];$/;"	v	typeref:struct:c2xrsrc * []
+c2xrsrc	c2xrsrc.c	/^struct c2xrsrc {$/;"	s	file:
+c2xrsrc	c2xrsrc.py	/^c2xrsrc = \\$/;"	v
+c2xrsrc	chpalette.sh	/^function c2xrsrc()$/;"	f
+cdefcolor	c2xrsrc.py	/^cdefcolor = \\$/;"	v
+cfile_extract	c2xrsrc.c	/^static void cfile_extract(void)$/;"	f	typeref:typename:void	file:
+cfile_extract	c2xrsrc.py	/^def cfile_extract():$/;"	f
+cleanup	c2xrsrc.c	/^void cleanup(int retcode)$/;"	f	typeref:typename:void
+cpath	c2xrsrc.c	/^unsigned char *cpath;$/;"	v	typeref:typename:unsigned char *
+filebuf	c2xrsrc.c	/^unsigned char filebuf[FILEBUFSIZE];$/;"	v	typeref:typename:unsigned char[]
+getnexthex	c2xrsrc.c	/^static unsigned char *getnexthex(unsigned char *buf, unsigned char *limit)$/;"	f	typeref:typename:unsigned char *	file:
+getnexthex	c2xrsrc.py	/^def getnexthex(string):$/;"	f
+hexcolor	c2xrsrc.c	/^	unsigned char hexcolor[HEXCOLLEN + 1];$/;"	m	struct:c2xrsrc	typeref:typename:unsigned char[]	file:
+hexpattern	c2xrsrc.py	/^hexpattern = re.compile("(.*)(#[a-fA-F0-9]{6})(.*)")$/;"	v
+init_c2	c2xrsrc.c	/^struct c2xrsrc *init_c2(unsigned char *var, unsigned char *attr)$/;"	f	typeref:struct:c2xrsrc *
+init_c2ptrs	c2xrsrc.c	/^void init_c2ptrs(void)$/;"	f	typeref:typename:void
+loadxrdb	chpalette.sh	/^function loadxrdb()$/;"	f
+main	c2xrsrc.c	/^int main()$/;"	f	typeref:typename:int
+main	c2xrsrc.py	/^def main():$/;"	f
+pathalloc	c2xrsrc.c	/^static int pathalloc(unsigned char **dst, unsigned char *src)$/;"	f	typeref:typename:int	file:
+pathcat	c2xrsrc.c	/^static unsigned char *pathcat(unsigned char *dst, unsigned char *src)$/;"	f	typeref:typename:unsigned char *	file:
+pathexists	c2xrsrc.c	/^#define pathexists(/;"	d	file:
+processargs	chpalette.sh	/^function processargs()$/;"	f
+runwal	chpalette.sh	/^function runwal()$/;"	f
+simulatekey	chpalette.sh	/^function simulatekey()$/;"	f
+userhome	c2xrsrc.c	/^unsigned char *userhome;$/;"	v	typeref:typename:unsigned char *
+userhome	c2xrsrc.py	/^userhome = os.path.expanduser("~")$/;"	v
+varname	c2xrsrc.c	/^	unsigned char varname[CFVARLEN + 1];$/;"	m	struct:c2xrsrc	typeref:typename:unsigned char[]	file:
+varnames	c2xrsrc.c	/^unsigned char *varnames[NUMOFATTR] = {$/;"	v	typeref:typename:unsigned char * []
+walcache	c2xrsrc.c	/^unsigned char *walcache;$/;"	v	typeref:typename:unsigned char *
+walcache	c2xrsrc.py	/^walcache = os.path.join(userhome, ".cache\/wal")$/;"	v
+walflags=	chpalette.sh	/^walflags=()$/;"	f
+xattr	c2xrsrc.c	/^	unsigned char xattr[XATTRLEN + 1];$/;"	m	struct:c2xrsrc	typeref:typename:unsigned char[]	file:
+xattributes	c2xrsrc.c	/^unsigned char *xattributes[NUMOFATTR] = {$/;"	v	typeref:typename:unsigned char * []
+xfile_append	c2xrsrc.c	/^static void xfile_append(void)$/;"	f	typeref:typename:void	file:
+xfile_append	c2xrsrc.py	/^def xfile_append():$/;"	f
+xpath	c2xrsrc.c	/^unsigned char *xpath;$/;"	v	typeref:typename:unsigned char *

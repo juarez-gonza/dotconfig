@@ -1,11 +1,53 @@
-! copy and paste
-xterm*VT100.Translations: #override \
-                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
-                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 ! font size
-xterm*faceName: Hack
-xterm*faceSize: 14
-! xterm*font:     *-fixed-*-*-*-18-*
+!XTerm*faceName: hack
+!XTerm*faceSize: 14
+!xterm*font:     *-hack nerd font-*-*-*-20-*
+!xterm*font: -*-liberation serif-*-*-*-*-24-*-*-*-*-*-*-*
+
+!XTerm.vt100.locale: false
+!XTerm.vt100.utf8: true
+
+! copy and paste, zooming in and out
+!xterm*VT100.Translations: #override \
+!                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+!                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+!		 Ctrl <Key>minus:	smaller-vt-font() \n\
+!		 Ctrl <Key>plus:	larger-vt-font() \n\
+!		 Ctrl <Key>0:		set-vt-font(d)
+
+!URxvt.font: Hack Nerd Font:size=12
+URxvt*font: xft:mono:style=Regular:pixelsize=16
+!URxvt*letterSpace: -5
+URxvt.scrollBar: false
+!URxvt*font:     *-fixed-*-*-*-18-*
+
+URxvt.vt100.locale: false
+URxvt.vt100.utf8: true
+
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+
+! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
+! I dont know why, but I needed to use hex keysym values to get it to work
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
+! Zoom in and out with https://github.com/majutsushi/urxvt-font-size
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show
+
+! General settings (in case im not using one of the prev terminal emulators)
+*.alpha: 0.9
+*.font: monospace:size=12
 
 ! "Visiblue" from terminal.sexy
 ! special
