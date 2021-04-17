@@ -1,0 +1,26 @@
+# package.use
+# required by sys-boot/os-prober-1.77::gentoo
+# required by sys-boot/os-prober (argument)
+>=sys-boot/grub-2.04-r2 mount
+
+x11-base/xorg-server suid
+>=www-client/w3m-0.5.3_p20180125 imlib
+# package.use
+# required by sys-boot/os-prober-1.77::gentoo
+# required by sys-boot/os-prober (argument)
+>=sys-boot/grub-2.04-r2 mount
+
+>=sys-auth/pambase-20201103 elogind
+
+x11-base/xorg-server suid
+www-client/firefox alsa
+>=www-client/w3m-0.5.3_p20180125 imlib
+
+# required by www-client/firefox-78.8.0::gentoo
+# required by firefox (argument)
+>=media-libs/libpng-1.6.37-r2 apng
+
+# required by www-client/firefox-78.8.0::gentoo[system-libvpx]
+# required by firefox (argument)
+>=media-libs/libvpx-1.9.0 postproc
+mail-client/neomutt -openssl gnutls
