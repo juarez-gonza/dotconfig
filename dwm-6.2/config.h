@@ -6,10 +6,10 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int gappx     = 12;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 
-static const int vertpad            = 8;       /* vertical padding of bar */
-static const int sidepad            = 8;       /* horizontal padding of bar */
-static const char dmenuvertpad[]    = "8";       /* vertical padding of bar */
-static const char dmenusidepad[]    = "8";       /* horizontal padding of bar */
+static const int vertpad            = 0;       /* vertical padding of bar */
+static const int sidepad            = 0;       /* horizontal padding of bar */
+static const char dmenuvertpad[]    = "0";       /* vertical padding of bar */
+static const char dmenusidepad[]    = "0";       /* horizontal padding of bar */
 
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -39,7 +39,7 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -86,15 +86,15 @@ static const char *volupcmd[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *voldowncmd[] = { "amixer", "set", "Master", "5%-", NULL };
 
 /* screen xbacklight key bindings */
-static const char *brupcmd[] = { "sudo", "xbacklight", "-inc", "10", NULL };
-static const char *brdowncmd[] = { "sudo", "xbacklight", "-dec", "10", NULL };
+static const char *brupcmd[] = { "xbacklight", "-inc", "10", NULL };
+static const char *brdowncmd[] = { "xbacklight", "-dec", "10", NULL };
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", normfgcolor, "-x", dmenusidepad, "-y", dmenuvertpad, NULL };
+static char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, "-x", dmenusidepad, "-y", dmenuvertpad, NULL };
 static const char *maintermcmd[]  = { "urxvt", NULL };
 static const char *sectermcmd[] = { "urxvt", NULL };
 
